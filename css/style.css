@@ -303,14 +303,6 @@ main {
   }
 }
 
-/* Reset de márgenes y paddings */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Estilo del contenedor principal */
 .contenedor {
   max-width: 1200px;
   margin: 0 auto;
@@ -320,19 +312,16 @@ main {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Sección de auto */
 section {
   margin-bottom: 20px;
 }
 
-/* Títulos */
 h1,
 h2 {
   color: #333;
   margin-bottom: 10px;
 }
 
-/* Estilo del artículo */
 .contenido {
   display: flex;
   align-items: center;
@@ -342,14 +331,12 @@ h2 {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Imagen del auto */
 .contenido img {
   max-width: 200px;
   border-radius: 8px;
   margin-right: 15px;
 }
 
-/* Estilo del aside */
 aside {
   background-color: #ffffff;
   border: 1px solid #ddd;
@@ -359,7 +346,6 @@ aside {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo de párrafos y spans dentro de aside */
 aside p {
   font-weight: bold;
   margin-bottom: 5px;
@@ -371,7 +357,6 @@ aside span {
   color: #555;
 }
 
-/* Estilo de los detalles */
 h2 {
   font-size: 1.5em;
 }
@@ -379,58 +364,158 @@ h2 {
 aside p {
   margin: 10px 0;
 }
-/* Contenedor del formulario */
+
 .formulario {
-  max-width: 600px; /* Ancho máximo */
-  margin: 2rem auto; /* Centrar el formulario verticalmente y horizontalmente */
-  padding: 2rem; /* Espaciado interno */
-  background-color: var(--gris); /* Fondo blanco semitransparente */
-  border-radius: 1rem; /* Bordes redondeados */
-  box-shadow: 0 4px 10px rgba(167, 64, 64, 0.1); /* Sombra suave */
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--gris);
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(167, 64, 64, 0.1);
 }
 
-/* Campos de entrada */
 .formulario__campo {
-  width: 100%; /* Ancho completo */
-  border: 2px solid var(--naranja); /* Borde más delgado */
-  background-color: transparent; /* Fondo transparente */
-  color: var(--negro); /* Color del texto */
-  font-size: 1.6rem; /* Tamaño de fuente más pequeño */
-  padding: 1rem; /* Espaciado interno */
-  border-radius: 0.5rem; /* Bordes redondeados más sutiles */
-  margin-bottom: 1.5rem; /* Espaciado inferior entre campos */
-  transition: border-color 0.3s; /* Transición suave para el borde */
+  width: 100%;
+  border: 2px solid var(--naranja);
+  background-color: transparent;
+  color: var(--negro);
+  font-size: 1.6rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.3s;
 }
 
-/* Efecto al enfocar el campo */
 .formulario__campo:focus {
-  border-color: var(--celeste); /* Cambiar color del borde al enfocar */
-  outline: none; /* Quitar contorno por defecto */
+  border-color: var(--celeste);
+  outline: none;
 }
 
-/* Estilo para las etiquetas */
 .label {
-  font-size: 1.5rem; /* Tamaño de fuente para las etiquetas */
-  font-weight: bold; /* Negrita */
-  margin-bottom: 0.5rem; /* Espaciado inferior */
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
-/* Botón de enviar */
 .boton_enviar {
-  display: block; /* Hacer que el botón ocupe el ancho completo */
-  width: 100%; /* Ancho completo */
-  background-color: var(--amarrillo); /* Color de fondo */
-  border: none; /* Sin bordes */
-  padding: 1rem; /* Espaciado interno */
-  font-size: 2rem; /* Tamaño de fuente */
-  border-radius: 1rem; /* Bordes redondeados */
-  color: var(--negro); /* Color del texto */
-  cursor: pointer; /* Cambiar cursor al pasar */
-  transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+  display: block;
+  width: 100%;
+  background-color: var(--amarrillo);
+  border: none;
+  padding: 1rem;
+  font-size: 2rem;
+  border-radius: 1rem;
+  color: var(--negro);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Efecto hover para el botón */
-.boton_enviar:hover {
-  color: var(--blanco); /* Cambiar color del texto */
-  background-color: var(--celeste); /* Cambiar color de fondo */
+.galeria {
+  width: 100%;
+  max-width: 300px; /* Ancho de la "ventana" para mostrar una imagen a la vez */
+  overflow: hidden; /* Oculta las imágenes fuera del área visible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* Centra el contenedor de la galería */
+}
+
+.galeria img {
+  margin-top: 3rem;
+  min-width: 100%; /* Cada imagen ocupa el 100% del ancho del contenedor */
+  transition: transform 0.5s ease-in-out;
+  animation: moverDerechaIzquierda 12s linear infinite;
+  border-radius: 1rem;
+}
+
+@keyframes moverDerechaIzquierda {
+  0% {
+    transform: translateX(100%);
+  }
+  5%,
+  20% {
+    transform: translateX(0);
+  }
+  25%,
+  40% {
+    transform: translateX(-100%);
+  }
+  45%,
+  60% {
+    transform: translateX(-200%);
+  }
+  65%,
+  80% {
+    transform: translateX(-300%);
+  }
+  85%,
+  100% {
+    transform: translateX(-400%);
+  }
+}
+
+.formulario_contacto {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.formulario_contacto label {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.formulario_contacto input[type="text"],
+.formulario_contacto input[type="email"],
+.formulario_contacto textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.formulario_contacto input[type="text"]:focus,
+.formulario_contacto input[type="email"]:focus,
+.formulario_contacto textarea:focus {
+  border-color: #5a9bd4;
+  outline: none;
+}
+
+.formulario_contacto textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.formulario_contacto button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #5a9bd4;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario_contacto button:hover {
+  background-color: #4a8ac2;
+}
+
+h2 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
 }
