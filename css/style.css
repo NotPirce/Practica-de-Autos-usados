@@ -6,6 +6,9 @@
   --blanco: #ffff;
   --celeste: #2a77cf;
   --negro: #000;
+  --gris: #7bd7de;
+  --fuente_titulos: "Rubik Wet Paint", system-ui;
+  --fuente_secundaria: "Playfair Display", serif;
 }
 
 html {
@@ -21,11 +24,28 @@ a {
   text-decoration: none;
 }
 
+h1,
+h2,
+h3 {
+  font-family: var(--fuente_titulos);
+}
+
+p,
+span {
+  font-family: var(--fuente_secundaria);
+}
+
+span {
+  font-size: 2rem;
+}
+
 img {
   width: 50%;
 }
 
 .contenedor {
+  max-width: 120rem;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -54,7 +74,7 @@ img {
 
 .navegador_enlace {
   color: var(--negro);
-  font-size: 1.5rem;
+  font-size: 2rem;
   padding: 1rem;
 }
 
@@ -81,7 +101,7 @@ img {
 }
 
 .contenedor2 {
-  background-color: var(--blanco);
+  background-color: var(--gris);
   padding: 2rem;
   margin-top: 4rem;
   border-radius: 1rem;
@@ -95,7 +115,7 @@ img {
 }
 
 .testimonios {
-  background-color: var(--blanco);
+  background-color: var(--gris);
   padding: 2rem;
   margin-top: 4rem;
   border-radius: 1rem;
@@ -131,32 +151,52 @@ hr {
 }
 
 .display {
-  width: 850px;
+  width: 90%;
+  max-width: 100rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .display {
-    grid-template-columns: repeat(2, 1fr);
+    width: 95%;
+    padding: 0.5rem;
   }
 }
 
 .producto {
   display: flex;
   border: 1px solid black;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   border-radius: 1rem;
   overflow: hidden;
+  box-shadow: 1px 1px 10px 6px var(--negro);
+  padding: 1rem;
+  transition: background-color 0.3s ease;
+  transition: transform 0.3s, fill 0.3s;
 }
+
+.producto:hover {
+  background-color: var(--gris);
+  transform: scale(1.1);
+}
+
 .producto-textos h2 {
   text-align: center;
 }
 .producto-textos {
   padding-left: 4rem;
 }
+
+.imagen {
+  border-radius: 1rem;
+  width: 50%;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -166,4 +206,231 @@ main {
 .btn-detalles {
   padding: 5px 15px;
   text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 1rem;
+  font-family: var(--fuente_secundaria);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.btn-detalles:hover {
+  background-color: var(--amarillo);
+  text-decoration: underline;
+}
+
+.contacto {
+  display: flex;
+}
+
+.icono {
+  margin-right: 1rem;
+  width: 7rem;
+}
+
+.footer {
+  background-color: #cdbbbb;
+  color: #000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border-radius: 1rem;
+  margin-bottom: 30rem;
+  margin-top: 5rem;
+}
+
+.contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.contacto-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contacto-item img.icono {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.parrafo2 {
+  font-size: 1rem;
+  margin: 0;
+  font-style: italic;
+  text-align: center;
+}
+
+.redes {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.svg {
+  width: 30px;
+  height: 30px;
+  fill: var(--blanco);
+  transition: transform 0.3s, fill 0.3s;
+}
+
+.svg:hover {
+  fill: #ae518c;
+  transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+  .svg {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (min-width: 768px) {
+  .contenido {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 10rem;
+    margin: 0 auto;
+  }
+}
+
+/* Reset de márgenes y paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo del contenedor principal */
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección de auto */
+section {
+  margin-bottom: 20px;
+}
+
+/* Títulos */
+h1,
+h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Estilo del artículo */
+.contenido {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagen del auto */
+.contenido img {
+  max-width: 200px;
+  border-radius: 8px;
+  margin-right: 15px;
+}
+
+/* Estilo del aside */
+aside {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de párrafos y spans dentro de aside */
+aside p {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+aside span {
+  display: block;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* Estilo de los detalles */
+h2 {
+  font-size: 1.5em;
+}
+
+aside p {
+  margin: 10px 0;
+}
+/* Contenedor del formulario */
+.formulario {
+  max-width: 600px; /* Ancho máximo */
+  margin: 2rem auto; /* Centrar el formulario verticalmente y horizontalmente */
+  padding: 2rem; /* Espaciado interno */
+  background-color: var(--gris); /* Fondo blanco semitransparente */
+  border-radius: 1rem; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(167, 64, 64, 0.1); /* Sombra suave */
+}
+
+/* Campos de entrada */
+.formulario__campo {
+  width: 100%; /* Ancho completo */
+  border: 2px solid var(--naranja); /* Borde más delgado */
+  background-color: transparent; /* Fondo transparente */
+  color: var(--negro); /* Color del texto */
+  font-size: 1.6rem; /* Tamaño de fuente más pequeño */
+  padding: 1rem; /* Espaciado interno */
+  border-radius: 0.5rem; /* Bordes redondeados más sutiles */
+  margin-bottom: 1.5rem; /* Espaciado inferior entre campos */
+  transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+/* Efecto al enfocar el campo */
+.formulario__campo:focus {
+  border-color: var(--celeste); /* Cambiar color del borde al enfocar */
+  outline: none; /* Quitar contorno por defecto */
+}
+
+/* Estilo para las etiquetas */
+.label {
+  font-size: 1.5rem; /* Tamaño de fuente para las etiquetas */
+  font-weight: bold; /* Negrita */
+  margin-bottom: 0.5rem; /* Espaciado inferior */
+}
+
+/* Botón de enviar */
+.boton_enviar {
+  display: block; /* Hacer que el botón ocupe el ancho completo */
+  width: 100%; /* Ancho completo */
+  background-color: var(--amarrillo); /* Color de fondo */
+  border: none; /* Sin bordes */
+  padding: 1rem; /* Espaciado interno */
+  font-size: 2rem; /* Tamaño de fuente */
+  border-radius: 1rem; /* Bordes redondeados */
+  color: var(--negro); /* Color del texto */
+  cursor: pointer; /* Cambiar cursor al pasar */
+  transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+/* Efecto hover para el botón */
+.boton_enviar:hover {
+  color: var(--blanco); /* Cambiar color del texto */
+  background-color: var(--celeste); /* Cambiar color de fondo */
 }
